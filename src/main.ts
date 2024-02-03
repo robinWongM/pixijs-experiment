@@ -3,11 +3,11 @@ import * as PIXI from 'pixi.js';
 const element = document.getElementById('test');
 const canvas = element;
 
-const wrap = (canvas) => {
-  const originAddEventListener = canvas.addEventListener.bind(canvas);
-  canvas.addEventListener = (...args) => {
+const wrap = (canvas: any) => {
+  const originAddEventListener = canvas?.addEventListener.bind(canvas);
+  canvas!.addEventListener = (...args: any[]) => {
     args[2] = { capture: args[2] === false ? false : true, passive: true };
-    originAddEventListener(...args);
+    originAddEventListener?.(...args);
   };
 };
 
@@ -17,7 +17,7 @@ wrap(globalThis.document);
 const app = new PIXI.Application({
   background: '#1099bb',
   resizeTo: window,
-  view: canvas,
+  view: canvas as unknown as PIXI.ICanvas,
 });
 
 let isFlower = true;
@@ -54,5 +54,5 @@ app.ticker.add(() => {
 });
 
 try {
-  app.view.style.touchAction = '';
+  app.view.style!.touchAction = '';
 } catch (e) {}
