@@ -23,10 +23,10 @@ if (searchParams.get('canvas') === 'true') {
 const app = new PIXI.Application({
   background: '#1099bb',
   resizeTo: window,
-  // view: canvas as unknown as PIXI.ICanvas,
-  // resolution: window.devicePixelRatio,
+  view: canvas as unknown as PIXI.ICanvas,
+  resolution: window.devicePixelRatio,
 });
-document.body.appendChild(app.view as unknown as HTMLElement);
+//document.body.appendChild(app.view as unknown as HTMLElement);
 
 let isFlower = true;
 
