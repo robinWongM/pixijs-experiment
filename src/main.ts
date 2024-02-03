@@ -57,7 +57,3 @@ character.on('pointertap', () => {
 app.ticker.add(() => {
   character.rotation += 0.02;
 });
-
-try {
-  app.view.style!.touchAction = '';
-} catch (e) {}
