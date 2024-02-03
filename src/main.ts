@@ -26,6 +26,7 @@ const app = new PIXI.Application({
   // view: canvas as unknown as PIXI.ICanvas,
   // resolution: window.devicePixelRatio,
 });
+document.body.appendChild(app.view as unknown as HTMLElement);
 
 let isFlower = true;
 
