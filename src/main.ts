@@ -3,9 +3,9 @@ import * as PIXI from 'pixi.js';
 const element = document.getElementById('test');
 const canvas = element;
 
-const wrap = (canvas: any) => {
-  const originAddEventListener = canvas?.addEventListener.bind(canvas);
-  canvas!.addEventListener = (...args: any[]) => {
+const wrap = (ele: any) => {
+  const originAddEventListener = ele?.addEventListener.bind(ele);
+  ele!.addEventListener = (...args: any[]) => {
     args[2] = { capture: args[2] === false ? false : true, passive: true };
     originAddEventListener?.(...args);
   };
@@ -23,6 +23,7 @@ const app = new PIXI.Application({
   background: '#1099bb',
   resizeTo: window,
   view: canvas as unknown as PIXI.ICanvas,
+  resolution: window.devicePixelRatio,
 });
 
 let isFlower = true;
