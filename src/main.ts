@@ -11,13 +11,13 @@ const wrap = (ele: any) => {
   };
 };
 
-const searchParams = new URLSearchParams(document.location.search);
-if (searchParams.get('document') === 'true') {
-  wrap(globalThis.document);
-}
-if (searchParams.get('canvas') === 'true') {
-  wrap(canvas);
-}
+// const searchParams = new URLSearchParams(document.location.search);
+// if (searchParams.get('document') === 'true') {
+//   wrap(globalThis.document);
+// }
+// if (searchParams.get('canvas') === 'true') {
+//   wrap(canvas);
+// }
 
 const app = new PIXI.Application({
   background: '#1099bb',
