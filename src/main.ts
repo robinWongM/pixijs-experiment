@@ -16,6 +16,9 @@ const searchParams = new URLSearchParams(document.location.search);
 if (searchParams.get('document') === 'true') {
   wrap(globalThis.document);
 }
+if (searchParams.get('global') === 'true') {
+  wrap(globalThis);
+}
 if (searchParams.get('canvas') === 'true') {
   wrap(canvas);
 }
