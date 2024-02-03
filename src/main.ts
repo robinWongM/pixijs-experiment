@@ -3,6 +3,7 @@ import * as PIXI from 'pixi.js';
 const element = document.getElementById('test');
 const canvas = element;
 
+// @ts-ignore
 const wrap = (ele: any) => {
   const originAddEventListener = ele?.addEventListener.bind(ele);
   ele!.addEventListener = (...args: any[]) => {
