@@ -11,7 +11,6 @@ const wrap = (canvas: any) => {
   };
 };
 
-wrap(canvas);
 wrap(globalThis.document);
 
 const app = new PIXI.Application({
